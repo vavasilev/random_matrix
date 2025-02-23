@@ -5,6 +5,7 @@ import matplotlib.pyplot as plt
 
 from app.householder_generator import HouseholderGenerator
 from app.givens_generator import GivensGenerator
+from app.spengler_generator import SpenglerGenerator
 from app.random_matrix_generator import RandomMatrixGenerator
 
 

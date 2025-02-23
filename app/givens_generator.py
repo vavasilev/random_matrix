@@ -7,8 +7,8 @@ from app.utils import Utils
 class GivensGenerator(RandomMatrixGenerator):
     def generate_unitary(self, n: int) -> np.ndarray:
         res: np.ndarray = np.identity(n)
-        for i in reversed(range(0, n-1)):
-            for j in reversed(range(i + 1, n)):
+        for i in range(0, n-1):
+            for j in range(i + 1, n):
                 res = np.dot(res, self.generate_givens(i, j, n))
         return res
 
