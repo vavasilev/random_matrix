@@ -4,6 +4,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 from app.householder_generator import HouseholderGenerator
+from app.givens_generator import GivensGenerator
 from app.random_matrix_generator import RandomMatrixGenerator
 
 
