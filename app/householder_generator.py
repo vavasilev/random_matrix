@@ -15,8 +15,8 @@ class HouseholderGenerator(RandomMatrixGenerator):
         return np.identity(n) - 2 * np.tensordot(np.transpose(np.conj(vec)), vec, axes=([0], [1]))
 
     def generate_random_vector(self, n: int) -> np.ndarray:
-        # it is important to take the square root of radius to make dots uniformly distributed in the circle
-        vec: np.ndarray = np.sqrt(np.random.uniform(0, 1, n)) * np.exp(1.j * np.random.uniform(0, 2 * np.pi, n))
+        # Used conclusions in https://mathworld.wolfram.com/HyperspherePointPicking.html
+        vec: np.ndarray = np.random.standard_normal(n) + 1.j * np.random.standard_normal(n)
         return vec / np.linalg.norm(vec)
 
     def generate_phase_matrix(self, n: int) -> np.ndarray:
