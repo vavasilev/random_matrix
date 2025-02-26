@@ -13,7 +13,7 @@ class SpenglerGenerator(RandomMatrixGenerator):
             for j in range(i + 1, n):
                 res = np.dot(res, np.dot(self.exp_z(i, j, lambdas[j, i], n), self.exp_y(i, j, lambdas[i, j], n)))
         for i in range(0, n-1):
-            res = np.dot(res, self.exp_z(i, n, lambdas[i, i], n))
+            res = np.dot(res, self.exp_z(i, n-1, lambdas[i, i], n))
         return res
 
     def generate_lambdas(self, n: int) -> np.ndarray:
