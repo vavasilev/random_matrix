@@ -28,6 +28,7 @@ def plot_histogram(unitaries: np.ndarray, n: int, out_path: str):
     figure, axis = plt.subplots(n, n)
     for i in range(n):
         for j in range(n):
+            axis[i, j].set_aspect(aspect='equal')
             if i != n-1:
                 axis[i, j].get_xaxis().set_visible(False)
             if j != 0:
